@@ -1,1 +1,24 @@
-<p>header works!</p>
+<header>
+
+    <div style="text-align: center;">
+        <form #f="ngForm" (ngSubmit)="onSubmitform(f)">
+        <h1>Image Search Engine</h1>
+        <br />
+            
+            <input type="file" (change)="onselectFile($event)"/>
+            <br>
+            <img [src]="url" height="200" style="margin-top: 40px;">
+            <br>
+            <button type="submit" class="btn btn-primary" style="margin: 0px 10px;margin-top: 40px;">Submit</button>
+            <br />
+            <h5></h5>
+        </form>
+    </div>
+
+    <h2>Query</h2>
+    <hr>
+         
+    <img src="" width="300px">
+
+</header>
+
