@@ -7,6 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+
+  <div style="text-align: center;">
+    <form #f="ngForm" (ngSubmit)="onSubmitform(f)">
+    <h1>Image Search Engine</h1>
+    <br />
+        
+        <input type="file" (change)="onselectFile($event)"/>
+        <br>
+        <img [src]="url" height="200" style="margin-top: 40px;">
+        <br>
+        <button type="submit" class="btn btn-primary" style="margin: 0px 10px;margin-top: 40px;">Submit</button>
+        <br />
+        <h5></h5>
+    </form>
+</div>
+
+<h2>Query</h2>
+<hr>
+     
+<img src="" width="300px">
+
 <div class="container">
 <div  
 class="search-results"
@@ -21,7 +42,7 @@ infiniteScroll
     <div class="card shadow">
      <div class="card-body">
       <h5 class="card-title text-center ">
-          <img class="card-img-top" src="{{post.download_url}}">
+          <img class="card-img-top" src="http://localhost:8000/ + {{post.download_url}}">
       </h5>
       </div>
     </div>
