@@ -39,10 +39,11 @@ infiniteScroll
 <div class="row pt-5">
   <div class="col-md-4 p-2" *ngFor="let post of allpost">
    <!-- single post card -->
+   <h5 class="text-center">{{post.rank}}</h5>
     <div class="card shadow">
      <div class="card-body">
       <h5 class="card-title text-center ">
-          <img class="card-img-top" src="http://localhost:8000/ + {{post.download_url}}">
+          <img class="card-img-top" src="http://localhost:8000/{{post.url}}">
       </h5>
       </div>
     </div>

@@ -23,7 +23,7 @@ export class ImageGalleryComponent implements OnInit {
   constructor(private http: HttpClient, private spinner: NgxSpinnerService, private imgService: ImageGaleryService) {
   }
 
-   ngOnInit() {
+  ngOnInit() {
   }
 
   loadInitPost() {
@@ -57,22 +57,15 @@ export class ImageGalleryComponent implements OnInit {
   const fileUpload= this.files;
 
   var file = new FormData();
-  const headers = new HttpHeaders();
-  headers.append('Content-Type', 'multipart/form-data');
-  headers.append('Accept', 'application/json');
   file.append('file', this.files);
 
-  // this.http.post<Response>('http://localhost:8000/upload',file, { observe: 'response' })
-  // .subscribe((response) => {
-  //     if(response.status== 200){
-  //       console.log(response.body);
-  //     }
-  // });
-
-  this.imgService.getImage(file).subscribe(response =>{
-    
+  this.http.post<any>('http://localhost:8000/upload',file, { observe: 'response' })
+  .subscribe((response) => {
+      if(response.status== 200){
+        this.allpost = response.body.result;
+        console.log(this.allpost);
+      }
   });
-
-  }
+}
 
 }
