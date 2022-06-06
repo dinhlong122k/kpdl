@@ -8,13 +8,11 @@ import { AppComponent } from './app.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageGalleryComponent,
-    HeaderComponent
+    ImageGalleryComponent
   ],
   imports: [
     BrowserModule,
